@@ -1,0 +1,342 @@
+:root {
+    --app-black: #06070b;
+    --app-black-2: #0f172a;
+    --app-green: #22c55e;
+    --app-blue: #3b82f6;
+    --app-cyan: #06b6d4;
+    --app-red: #ef4444;
+
+    --app-text: #0f172a;
+    --app-muted: #64748b;
+
+    --app-sidebar-bg: #5a5a5b;
+    --app-sidebar-mini-bg: rgba(255, 255, 255, 0.06);
+
+    --app-hero-bg: rgb(244, 210, 130);
+
+    --app-sidebar-width: 220px;
+    --app-hero-height: 140px;
+}
+
+html,
+body {
+    min-height: 100%;
+    background: #ffffff;
+    color: var(--app-text);
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app-layout {
+    min-height: 100vh;
+    align-items: stretch;
+}
+
+.sidebar {
+    width: var(--app-sidebar-width);
+    flex: 0 0 var(--app-sidebar-width);
+    min-height: 100vh;
+    background: var(--app-sidebar-bg);
+    border-right: 1px solid rgba(92, 90, 90, 0.08);
+    padding: 0.9rem !important;
+}
+
+.sidebar-mini {
+    padding: 0.85rem;
+    border-radius: 1.15rem;
+    background: var(--app-sidebar-mini-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    margin-bottom: 0.85rem;
+}
+
+.sidebar-mini-label {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.sidebar-mini-user {
+    margin-top: 0.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-footer {
+    flex: 0 0 auto;
+    margin-top: 0.75rem;
+}
+
+.sidebar .nav-link,
+.offcanvas .nav-link {
+    color: #cbd5e1;
+    border-radius: 0.85rem;
+    padding: 0.62rem 0.8rem;
+    margin-bottom: 0.28rem;
+    transition: 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.sidebar .nav-link:hover,
+.offcanvas .nav-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    transform: translateX(2px);
+}
+
+.sidebar .nav-link.active,
+.offcanvas .nav-link.active {
+    background: linear-gradient(90deg, var(--app-blue), var(--app-cyan));
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(6, 182, 212, 0.18);
+}
+
+.app-page {
+    min-width: 0;
+    flex: 1;
+}
+
+.app-hero {
+    position: relative;
+    min-height: var(--app-hero-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--app-hero-bg);
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+.app-hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.app-hero-logo {
+    width: min(360px, 90vw);
+    max-height: 92px;
+    object-fit: contain;
+    display: block;
+}
+
+.app-hero-title {
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #1864f0;
+}
+
+.content-wrap {
+    width: 100%;
+    min-width: 0;
+    background: #ffffff;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.text-muted {
+    color: var(--app-muted) !important;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.card:hover {
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.11);
+}
+
+.shadow-sm {
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.85rem;
+    border-color: rgba(15, 23, 42, 0.18);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--app-cyan);
+    box-shadow: 0 0 0 0.2rem rgba(6, 182, 212, 0.18);
+}
+
+.form-text {
+    color: var(--app-muted);
+}
+
+.table > :not(caption) > * > * {
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+.btn {
+    border-radius: 0.85rem;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(15, 23, 42, 0.12);
+}
+
+.btn-primary {
+    background: var(--app-blue);
+    border-color: var(--app-blue);
+}
+
+.btn-primary:hover {
+    filter: brightness(0.95);
+}
+
+.btn-success {
+    background: var(--app-green);
+    border-color: var(--app-green);
+}
+
+.btn-success:hover {
+    filter: brightness(0.95);
+}
+
+.btn-info {
+    background: var(--app-cyan);
+    border-color: var(--app-cyan);
+    color: #ffffff;
+}
+
+.btn-info:hover {
+    color: #ffffff;
+    filter: brightness(0.95);
+}
+
+.btn-danger {
+    background: var(--app-red);
+    border-color: var(--app-red);
+}
+
+.btn-danger:hover {
+    filter: brightness(0.95);
+}
+
+.btn-warning {
+    background: #38bdf8;
+    border-color: #38bdf8;
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    color: #ffffff;
+    filter: brightness(0.95);
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--app-blue);
+}
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -20% -20% auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.14), transparent 70%);
+    pointer-events: none;
+}
+
+.stat-card.green {
+    border-top-color: var(--app-green);
+}
+
+.stat-card.cyan {
+    border-top-color: var(--app-cyan);
+}
+
+.stat-card.red {
+    border-top-color: var(--app-red);
+}
+
+.mobile-menu-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    border: 0;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #0f172a, #06070b);
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.app-mobile-sidebar {
+    background: var(--app-sidebar-bg);
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        display: none;
+    }
+
+    .app-hero {
+        min-height: 128px;
+        padding: 0.6rem 1rem;
+    }
+
+    .app-hero-logo {
+        width: min(300px, 92vw);
+        max-height: 76px;
+    }
+
+    .app-hero-title {
+        font-size: 1.35rem;
+    }
+}
+.gallery-card {
+    overflow: hidden;
+}
+
+.gallery-thumb-wrap {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.gallery-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
